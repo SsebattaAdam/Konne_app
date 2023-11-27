@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:konne_sp/screens/auth/login.dart';
+import 'package:konne_sp/screens/main/login.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

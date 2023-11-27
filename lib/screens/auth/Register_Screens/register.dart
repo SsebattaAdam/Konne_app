@@ -1,11 +1,13 @@
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:konne_sp/screens/auth/Users/product.dart';
-import 'package:konne_sp/screens/home.dart';
+
+import 'package:konne_sp/screens/main/home.dart';
 import '../../../../widgets/custom_text_field.dart';
 import '../../../../widgets/reusable.dart';
+import '../../Users/user_service_provider/product.dart';
 
 class RegisterScreen1 extends StatefulWidget {
   const RegisterScreen1({Key? key}) : super(key: key);
@@ -159,9 +161,16 @@ class _RegisterScreen1State extends State<RegisterScreen1> {
                     ),
                     SizedBox(height: 10,),
                     signInSignUpButton(context, false, (){
+                      FirebaseAuth.instance.createUserWithEmailAndPassword(
+                          email: emailController.text,
+                          password: passwordController.text
+                      ).then((value){
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=>ProductForm()));
+                      }).catchError((e){
+                        print(e);
+                      });
 
-                      Navigator.push(context,
-                      MaterialPageRoute(builder: (context)=>ProductForm()));
                     })
                 /*Padding(padding: const EdgeInsets.all(8.0),
 

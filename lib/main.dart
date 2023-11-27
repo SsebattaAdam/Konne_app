@@ -1,13 +1,14 @@
-//import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:flutter/material.dart';
-import 'package:konne_sp/screens/auth/Users/Register_Screens/register.dart';
-import 'package:konne_sp/screens/splashscreen.dart';
 
-void main() /*async*/{
- /* WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-*/
+import 'package:konne_sp/screens/main/splashscreen.dart';
 
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

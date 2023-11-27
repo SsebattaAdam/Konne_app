@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:konne_sp/screens/auth/Users/Register_Screens/register.dart';
 import 'package:konne_sp/utils/color_utils.dart';
-
 import '../../widgets/reusable.dart';
-import '../forgotPasswordScreens/forgot_password_email/forgotpassword_email.dart';
-import '../forgotPasswordScreens/forgot_password_phone/forfotpassword_phone.dart';
-import 'Users/User_looking_4_service.dart';
-import 'Users/product.dart';
+import '../Users/user_client/User_looking_4_service.dart';
+import '../auth/Register_Screens/register.dart';
+import '../auth/forgotPasswordScreens/forgot_password_email/forgotpassword_email.dart';
+import '../auth/forgotPasswordScreens/forgot_password_phone/forfotpassword_phone.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});

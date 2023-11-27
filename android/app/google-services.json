@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "263130744225",
-    "project_id": "konnesp-f7ff5",
-    "storage_bucket": "konnesp-f7ff5.appspot.com"
+    "project_number": "844508327926",
+    "project_id": "konne-e976f",
+    "storage_bucket": "konne-e976f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:263130744225:android:9a0ef64e73f35b562977e0",
+        "mobilesdk_app_id": "1:844508327926:android:3e42f0295dc965a34aa1d7",
         "android_client_info": {
           "package_name": "com.example.konne_seller"
         }
@@ -15,7 +15,26 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBZ8ZuGGwyoxPoEEKVTJP5-1CYGOvoLPgs"
+          "current_key": "AIzaSyBkDAcOBEYA4VdUu9cIH5elWqyQuS9zTL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844508327926:android:141866a53bfd18954aa1d7",
+        "android_client_info": {
+          "package_name": "com.example.konne_sp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkDAcOBEYA4VdUu9cIH5elWqyQuS9zTL0"
         }
       ],
       "services": {
