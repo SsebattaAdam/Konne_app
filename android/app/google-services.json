@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "263130744225",
+    "project_id": "konnesp-f7ff5",
+    "storage_bucket": "konnesp-f7ff5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263130744225:android:9a0ef64e73f35b562977e0",
+        "android_client_info": {
+          "package_name": "com.example.konne_seller"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ8ZuGGwyoxPoEEKVTJP5-1CYGOvoLPgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
