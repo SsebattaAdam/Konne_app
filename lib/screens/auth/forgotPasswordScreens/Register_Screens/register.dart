@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:konne_sp/screens/auth/Users/product.dart';
-import 'package:konne_sp/screens/home.dart';
-import '../../../../widgets/custom_text_field.dart';
-import '../../../../widgets/reusable.dart';
+import 'package:konne_sp/screens/Users/user_service_Provider/product.dart';
+import 'package:konne_sp/screens/widgets/custom_text_field.dart';
+//import 'package:konne_sp/screens/main/home.dart'
+import '../../../widgets/reusable.dart';
 
 class RegisterScreen1 extends StatefulWidget {
   const RegisterScreen1({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class _RegisterScreen1State extends State<RegisterScreen1> {
        // backgroundColor: Color(0xff1044fb),
       appBar: AppBar(
         backgroundColor: Color(0xff1044fb),
-        title: Text('REGISTER ',
+        title: const Text('REGISTER ',
         style: TextStyle(
           color: Colors.white,
           fontFamily: 'kadwa',
@@ -57,12 +57,12 @@ class _RegisterScreen1State extends State<RegisterScreen1> {
                   });
                 },
                 child: Container(
-                  margin: EdgeInsets.all(5),
+                  margin: const EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     //color: Colors.grey[300], // Change the background color
                     borderRadius: BorderRadius.circular(8), // Set border radius for rectangular shape
                   ),
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   width: MediaQuery.of(context).size.width * 0.8, // Set width to match CustomTextField
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

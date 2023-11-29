@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:konne_sp/screens/auth/login.dart';
-import 'package:konne_sp/screens/auth/Users/Register_Screens/register.dart';
-import 'package:konne_sp/screens/splashscreen2.dart';
+//import 'package:google_fonts/google_fonts.dart';
+import 'package:konne_sp/screens/auth/forgotPasswordScreens/Register_Screens/login.dart';
+// import 'package:konne_sp/screens/auth/Users/Register_Screens/register.dart';
+// import 'package:konne_sp/screens/splashscreen2.dart';
 
 class MySplashScreen extends StatefulWidget {
   const MySplashScreen({super.key});

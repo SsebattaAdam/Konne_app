@@ -1,7 +1,8 @@
 //import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:konne_sp/screens/auth/Users/Register_Screens/register.dart';
-import 'package:konne_sp/screens/splashscreen.dart';
+import 'package:konne_sp/screens/Users/user_service_Provider/Get_started/welcomePage.dart';
+//import 'package:konne_sp/screens/auth/Users/Register_Screens/register.dart';
+//import 'package:konne_sp/screens/main/splashscreen.dart';
 
 void main() /*async*/{
  /* WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MySplashScreen(),
+      home: const Loginscreen(),
     );
   }
 }
