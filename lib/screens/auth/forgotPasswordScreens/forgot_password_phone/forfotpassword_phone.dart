@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../Fluuter_OTP_Screen/forgotpassword_otp.dart';
+import '../Fluuter_OTP_Screen/ottp_screen.dart';
 
 class ResetPassword_Phone_Screen extends StatelessWidget {
   const ResetPassword_Phone_Screen({super.key});

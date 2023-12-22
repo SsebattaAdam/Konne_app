@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../Fluuter_OTP_Screen/ottp_screen.dart';
 
-class ResetPassword_Email_Screen extends StatelessWidget {
-  const ResetPassword_Email_Screen({super.key});
+class Email_verification_Screen extends StatelessWidget {
+  const Email_verification_Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class ResetPassword_Email_Screen extends StatelessWidget {
 
                 children: [
                   Text(
-                    'Reset your password',
+                    'Email sent ',
                     style: TextStyle(
                       fontFamily: 'kadwa',
                       color: Colors.black,
@@ -40,28 +40,7 @@ class ResetPassword_Email_Screen extends StatelessWidget {
                   SizedBox(height: 20),
                   Form(child: Column(
                       children:[
-                        TextFormField(
-                          decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.phone),
-                            hintText: 'Enter your Email',
-                            labelText: 'Email',
-                            labelStyle: TextStyle(
-                              fontFamily: 'kadwa',
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                            ),
-                            hintStyle: TextStyle(
-                              fontFamily: 'kadwa',
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                            ),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                          ),
-                        ),
+
                         SizedBox(height: 20),
                         SizedBox(
                           width: double.infinity,
@@ -73,6 +52,52 @@ class ResetPassword_Email_Screen extends StatelessWidget {
                               );
                             },
                             child: Text("Continue", style: TextStyle(
+                              fontFamily: 'kadwa',
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue, // Change the button color here
+                            ),
+                          ),
+
+                        ),
+                        SizedBox(height: 20),
+                        SizedBox(
+                          width: double.infinity,
+                          child:ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const OTP_Screen()),
+                              );
+                            },
+                            child: Text("Resend Email", style: TextStyle(
+                              fontFamily: 'kadwa',
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue, // Change the button color here
+                            ),
+                          ),
+
+                        ),
+                        SizedBox(height: 20),
+                        SizedBox(
+                          width: double.infinity,
+                          child:ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const OTP_Screen()),
+                              );
+                            },
+                            child: Text("Back to previos Screen", style: TextStyle(
                               fontFamily: 'kadwa',
                               color: Colors.white,
                               fontSize: 20,

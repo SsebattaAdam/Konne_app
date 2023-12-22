@@ -1,16 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:otp_text_field/otp_field.dart';
-import 'package:otp_text_field/otp_text_field.dart';
-import 'package:otp_text_field/style.dart';
+import '../../controllers/otp_controller.dart';
+
 
 class OTP_Screen extends StatelessWidget {
   const OTP_Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var OTPController1 = Get.put(OTPController());
+    var otp;
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -24,7 +28,7 @@ class OTP_Screen extends StatelessWidget {
       
                 children: [
                   SizedBox(height: 150,),
-                  Text("DO\nDE\n",
+                  Text("CO\nDE\n",
                     style: GoogleFonts.montserrat(
                       color: Colors.black,
                       fontSize: 80,
@@ -44,29 +48,28 @@ class OTP_Screen extends StatelessWidget {
                     fontSize: 12,
                   )),
                   SizedBox(height: 20,),
-                  OTPTextField(
+                  OtpTextField(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    numberOfFields: 6,
 
-                      length: 6,
-                      width: MediaQuery.of(context).size.width,
-                      textFieldAlignment: MainAxisAlignment.spaceAround,
-                      fieldWidth: 45,
+                    borderColor: Colors.black,
+                    fillColor: Colors.black,
+                    showFieldAsBox: true,
+                    onSubmit: ( String code) {
+                      otp= code;
+                      OTPController.tonewpage.verifyOtp(otp);
 
-                      fieldStyle: FieldStyle.box,
-                      outlineBorderRadius: 15,
-                      style: TextStyle(fontSize: 17),
-                    onCompleted:(pin){
-                        print("The pin is $pin");
-                  }
+                    },
+
                   ),
+
                   SizedBox(height: 20,),
                   SizedBox(
                     width: double.infinity,
                     child:ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const OTP_Screen()),
-                        );
+                        OTPController.tonewpage.verifyOtp(otp);
+
                       },
                       child: Text("Continue", style: TextStyle(
                         fontFamily: 'kadwa',

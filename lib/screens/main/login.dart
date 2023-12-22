@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:konne_sp/utils/color_utils.dart';
 import '../../widgets/reusable.dart';
 import '../Users/user_client/User_looking_4_service.dart';
 import '../auth/Register_Screens/register.dart';
+import '../auth/Register_Screens/register_user2.dart';
+import '../auth/controllers/Register_Servicepro.dart';
+import '../auth/controllers/login_controller.dart';
 import '../auth/forgotPasswordScreens/forgot_password_email/forgotpassword_email.dart';
 import '../auth/forgotPasswordScreens/forgot_password_phone/forfotpassword_phone.dart';
 
@@ -14,8 +19,9 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  TextEditingController _emailTextController = TextEditingController();
-  TextEditingController _passwordTextController = TextEditingController();
+
+  final controller = Get.put(Logincontroller());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,12 +48,33 @@ class _LoginState extends State<Login> {
               ),
               SizedBox(height: 20,),
               reusableTextField("Enter Email", Icons.email_outlined, true,
-                  _emailTextController),
+                  controller: controller.email,
+                ),
               SizedBox(height: 20,),
-              reusableTextField("Enter Password", Icons.lock_outline, true,
-                  _passwordTextController),
+              reusableTextField("Enter Password", Icons.lock_outline, true ,
+                  controller: controller.password
+                ),
               SizedBox(height: 20,),
-              signInSignUpButton(context, true, () {}),
+
+              Container(
+                width: double.infinity,
+                child: ElevatedButton(
+
+                  onPressed: () {
+                    Logincontroller.tonewpage.login(controller.email.text, controller.password.text);
+
+                    // Put your sign up function here
+                  },
+                  child: Text('Login' ,style : TextStyle(fontSize:25)),
+                  style: ButtonStyle(
+
+                    backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.blue),
+                    foregroundColor:
+                    MaterialStateProperty.all<Color>(Colors.white),
+                  ),
+                ),
+              ),
               SizedBox(height: 20,),
               //RESET PASSWORD
               Align(
@@ -204,7 +231,10 @@ Row signUpOption(){
         GestureDetector(
           onTap: () {
             showModalBottomSheet(context: context,
-                builder: (context)=> Container(
+                isScrollControlled: true,
+                builder: (context) => FractionallySizedBox( // Use FractionallySizedBox to occupy the entire screen
+                    heightFactor: 0.8, // Specify height factor to 0.9
+                child :Container(
                     padding: EdgeInsets.all(30),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -221,8 +251,8 @@ Row signUpOption(){
                           style: TextStyle(
                             fontFamily: 'kadwa',
                             color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                         SizedBox(height: 30,),
@@ -230,7 +260,7 @@ Row signUpOption(){
                         GestureDetector(
                           onTap: (){
                             Navigator.pushReplacement(context,
-                                MaterialPageRoute(builder: (context)=> User_looking_4_service()));
+                                MaterialPageRoute(builder: (context)=> Register_user_looking3service ()));
                           },
                           child: Container(
                             padding: EdgeInsets.all(10),
@@ -318,7 +348,7 @@ Row signUpOption(){
                       ],
                     )
                 )
-            );
+                ));
           },
           child: const Text("Sign up",
           style: TextStyle(color: Colors.white,fontFamily: 'kadwa',fontWeight: FontWeight.bold),

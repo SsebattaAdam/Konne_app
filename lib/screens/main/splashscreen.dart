@@ -45,7 +45,7 @@ class _MySplashScreenState extends State<MySplashScreen>
             children: [
               const Padding(
                   padding: EdgeInsets.all(20),
-                  child: Text('KONNE',
+                  child: Text('WELCOME TO KONNE',
                     style: const TextStyle(
                       fontFamily: 'kadwa',
                       color: Colors.white,
