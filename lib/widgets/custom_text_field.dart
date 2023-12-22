@@ -12,7 +12,7 @@ class CustomTextField extends StatelessWidget {
     this.data,
     this.hintText,
     this.isObscure,
-    this.enabled,
+    this.enabled, required FormFieldValidator validator, required AutovalidateMode autovalidateMode,
   });
 
   @override

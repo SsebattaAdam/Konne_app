@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../screens/auth/controllers/Register_Servicepro.dart';
+import '../screens/auth/controllers/login_controller.dart';
+import '../screens/auth/forgotPasswordScreens/Fluuter_OTP_Screen/ottp_screen.dart';
 
 Image logoWidget(String imageName) {
   return Image.asset(
@@ -11,24 +17,24 @@ Image logoWidget(String imageName) {
 }
 
 TextField reusableTextField(String text, IconData icon, bool isPasswordType,
-      TextEditingController controller){
+       {required TextEditingController controller}){
   return TextField(
     controller: controller,
-    obscureText: isPasswordType,
+
     enableSuggestions: !isPasswordType,
-    autocorrect: !isPasswordType ,
+
     cursorColor: Colors.white,
-    style: TextStyle(color: Colors.white),
+    style: TextStyle(color: Colors.black),
     decoration: InputDecoration(
       prefixIcon: Icon(
         icon,
         color: Colors.white,
       ),
       labelText: text,
-      labelStyle: TextStyle(color: Colors.white),
+      labelStyle: TextStyle(color: Colors.black, ),
       filled: true,
       floatingLabelBehavior: FloatingLabelBehavior.never,
-      fillColor: Colors.white.withOpacity(0.3),
+      fillColor: Colors.white,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(30.0),
         borderSide: const BorderSide(width: 0,style: BorderStyle.none)
@@ -59,7 +65,11 @@ BuildContext context, bool isLogin, Function onTop
 
     child: ElevatedButton(
       onPressed: (){
-        onTop();
+        final controller = Get.put(Signup_Servicepro());
+       // final controller1 = Get.put( Logincontroller());
+       // Logincontroller.tonewpage.login(controller1.email.text, controller1.password.text);
+        Signup_Servicepro.tonewpage.phoneAurthentication(controller.phone.text.trim());
+        Get.to(()=>OTP_Screen ());
       },
       child: Text(
         isLogin ? 'LOG IN': 'REGISTER',
